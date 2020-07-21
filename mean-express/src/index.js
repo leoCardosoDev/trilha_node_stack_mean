@@ -8,6 +8,7 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
+app.use(cors())
 
 mongoose.connect('mongodb://localhost:27017/mean', {useNewUrlParser: true, useUnifiedTopology: true})
 require('./api/routes')(app)
