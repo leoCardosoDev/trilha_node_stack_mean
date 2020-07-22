@@ -12,14 +12,18 @@ export class PostcreateComponent {
 
   constructor(private appService: AppService, private formBuilder: FormBuilder) { }
 
-  public form = this.formBuilder.group({
-    title: [""],
-    body: [""]
+  public form: FormGroup = this.formBuilder.group({
+    title: ["", Validators.required],
+    body: ["", Validators.required]
   })
 
 
   create(event){
     this.appService.save(this.form.value.title, this.form.value.body).subscribe(result => console.log(result))
+  }
+
+  get formCreate() {
+    return this.form.controls;
   }
 
 }
