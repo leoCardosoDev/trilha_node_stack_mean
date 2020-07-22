@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
 
   try {
     const saved = await post.save()
-    return res.status(201).end({
+    return res.status(201).json({
       post: saved
     })
   } catch (error) {

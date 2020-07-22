@@ -3,20 +3,20 @@ const Schema = mongoose.Schema
 
 const Post = Schema({
   title: {
-    type: String,
-    required: true
+      type: String,
+      required: true
   },
   body: {
-    type: String,
-    required: true
+      type: String,
+      required: true
   },
   slug: {
-    type: String,
-    required: true
+      type: String,
+      required: true
   },
   created_at: {
-    type: Date,
-    default: new Date()
+      type: Date,
+      default: new Date()
   }
 })
 
